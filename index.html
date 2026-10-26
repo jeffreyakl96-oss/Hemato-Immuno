@@ -27,3 +27,4 @@ $('retryMissed').onclick=()=>{let missed=session.ids.filter(n=>session.answers[n
 $('again').onclick=()=>{session=null;clear();show('setup')};
 try{let saved=JSON.parse(localStorage.getItem(STORE));if(saved&&Array.isArray(saved.ids)&&saved.ids.length&&saved.ids.every(n=>Number.isInteger(n)&&n>=1&&n<=BANK.length)&&saved.answers&&['exam','study'].includes(saved.mode)&&Number.isInteger(saved.pos)&&saved.pos>=0&&saved.pos<saved.ids.length){session=saved;render()}else show('setup')}catch(e){show('setup')}
 </script></body></html>
+
